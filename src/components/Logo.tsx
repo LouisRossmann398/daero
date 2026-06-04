@@ -14,11 +14,13 @@ export default function Logo({
   return (
     <Link
       href="/"
-      className="group inline-flex shrink-0 rounded-lg bg-white px-2 py-1 transition-opacity hover:opacity-90"
+      className={`group inline-flex shrink-0 transition-opacity hover:opacity-90 ${
+        onLightBackground ? "rounded-lg bg-white px-2 py-1" : ""
+      }`}
       aria-label="DAERO GmbH – Startseite"
     >
       <DaeroLogoImage
-        variant="header"
+        variant={onLightBackground ? "header" : "footer"}
         priority={priority}
         onLightBackground={onLightBackground}
       />
