@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { intro, about, company } from "@/content/site";
 import PageHeader from "@/components/PageHeader";
 import ContactCTA from "@/components/ContactCTA";
+import { DaeroLogoPanel } from "@/components/DaeroLogoImage";
 
 export const metadata: Metadata = {
   title: "Über uns",
@@ -38,7 +39,11 @@ export default function UeberUnsPage() {
             ))}
           </div>
 
-          <aside>
+          <aside className="space-y-4">
+            <DaeroLogoPanel
+              variant="feature"
+              panelClassName="border border-ink-200 bg-white"
+            />
             <div className="grid grid-cols-2 gap-4">
               {stats.map((s) => (
                 <div

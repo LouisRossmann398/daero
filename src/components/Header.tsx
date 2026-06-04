@@ -42,7 +42,7 @@ export default function Header() {
       }`}
     >
       <div className="container-page flex h-16 items-center justify-between gap-4">
-        <Logo />
+        <Logo priority />
 
         {/* Desktop nav */}
         <nav className="hidden items-center gap-1 md:flex">

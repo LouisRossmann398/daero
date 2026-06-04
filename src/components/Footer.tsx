@@ -10,7 +10,7 @@ export default function Footer() {
     <footer className="mt-auto border-t border-ink-800 bg-ink-950 text-ink-300">
       <div className="container-page grid gap-10 py-14 sm:grid-cols-2 lg:grid-cols-4">
         <div className="sm:col-span-2 lg:col-span-1">
-          <Logo light />
+          <Logo />
           <p className="mt-4 max-w-xs text-sm leading-relaxed text-ink-400">
             Ihr IT-Dienstleister im Raum München – maßgeschneiderte Datenbank-
             und Softwarelösungen für den Mittelstand.

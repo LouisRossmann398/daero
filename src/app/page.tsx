@@ -1,7 +1,8 @@
 import Link from "next/link";
-import { intro, services, about, company } from "@/content/site";
+import { intro, services, about } from "@/content/site";
 import ServiceCard from "@/components/ServiceCard";
 import ContactCTA from "@/components/ContactCTA";
+import DaeroLogoImage, { DaeroLogoPanel } from "@/components/DaeroLogoImage";
 import { ArrowRightIcon } from "@/components/Icons";
 
 export default function HomePage() {
@@ -60,34 +61,11 @@ export default function HomePage() {
             </div>
           </div>
 
-          {/* Hero visual placeholder (replace with real image later) */}
           <div className="animate-fade-up lg:justify-self-end">
-            <div className="relative mx-auto aspect-[4/3] w-full max-w-md rounded-2xl border border-white/10 bg-gradient-to-br from-ink-800 to-ink-900 p-6 shadow-2xl">
-              <div className="flex items-center gap-1.5">
-                <span className="h-3 w-3 rounded-full bg-red-400/80" />
-                <span className="h-3 w-3 rounded-full bg-yellow-400/80" />
-                <span className="h-3 w-3 rounded-full bg-green-400/80" />
-              </div>
-              <div className="mt-5 space-y-2.5 font-mono text-xs">
-                <p className="text-brand-300">
-                  <span className="text-ink-500">$</span> daero build --solution
-                </p>
-                <p className="text-ink-400">→ Analyse der IT-Strukturen …</p>
-                <p className="text-ink-400">→ Datenbank-Modell erstellt</p>
-                <p className="text-ink-400">→ Individualsoftware generiert</p>
-                <p className="text-accent">✓ Erfolgreich bereitgestellt</p>
-              </div>
-              <div className="mt-6 grid grid-cols-3 gap-2">
-                {["DB", "API", "Cloud"].map((t) => (
-                  <div
-                    key={t}
-                    className="rounded-lg border border-white/10 bg-white/5 py-3 text-center text-xs font-semibold text-brand-200"
-                  >
-                    {t}
-                  </div>
-                ))}
-              </div>
-            </div>
+            <DaeroLogoPanel
+              variant="hero"
+              panelClassName="mx-auto w-full max-w-lg border border-white/10 bg-white/95 shadow-2xl shadow-brand-900/20"
+            />
           </div>
         </div>
       </section>
@@ -96,6 +74,9 @@ export default function HomePage() {
       <section className="section-py">
         <div className="container-page grid gap-12 lg:grid-cols-[1fr_1.2fr]">
           <div>
+            <div className="mb-6 w-fit rounded-xl border border-ink-200 bg-white p-4">
+              <DaeroLogoImage variant="inline" />
+            </div>
             <span className="text-sm font-semibold uppercase tracking-wider text-brand-600">
               Über DAERO
             </span>
@@ -176,30 +157,11 @@ export default function HomePage() {
             </ul>
           </div>
 
-          {/* Placeholder visual */}
           <div className="order-1 lg:order-2">
-            <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl bg-gradient-to-br from-brand-600 to-ink-900">
-              <div
-                aria-hidden
-                className="absolute inset-0 opacity-20"
-                style={{
-                  backgroundImage:
-                    "radial-gradient(circle at 30% 30%, #fff 0, transparent 40%)",
-                }}
-              />
-              <div className="absolute inset-0 grid place-items-center p-8 text-center">
-                <div>
-                  <p className="text-5xl font-bold text-white">DAERO</p>
-                  <p className="mt-2 text-sm font-medium uppercase tracking-[0.2em] text-brand-200">
-                    {company.location}
-                  </p>
-                  <p className="mt-6 text-xs text-brand-100/70">
-                    [ Platzhalter – hier kann später ein Team- oder
-                    Standortbild eingefügt werden ]
-                  </p>
-                </div>
-              </div>
-            </div>
+            <DaeroLogoPanel
+              variant="feature"
+              panelClassName="min-h-[280px] w-full border border-ink-200 bg-gradient-to-br from-brand-50 to-white"
+            />
           </div>
         </div>
       </section>

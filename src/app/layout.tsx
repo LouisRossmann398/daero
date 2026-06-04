@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { LOGO } from "@/lib/brand";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -37,6 +38,11 @@ export const metadata: Metadata = {
       "Maßgeschneiderte Datenbank- und Softwarelösungen für den Mittelstand.",
     locale: "de_DE",
     type: "website",
+    images: [{ url: LOGO.src, alt: LOGO.alt }],
+  },
+  icons: {
+    icon: LOGO.src,
+    apple: LOGO.src,
   },
 };
 
