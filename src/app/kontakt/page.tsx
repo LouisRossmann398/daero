@@ -101,7 +101,11 @@ export default function KontaktPage() {
           {/* Placeholder for future contact form */}
           <div className="rounded-2xl border border-ink-200 bg-ink-50 p-8">
             <div className="mb-6 flex justify-center rounded-xl border border-ink-200 bg-white p-5">
-              <DaeroLogoImage variant="feature" className="max-w-xs" />
+              <DaeroLogoImage
+                variant="feature"
+                onLightBackground
+                className="max-w-xs"
+              />
             </div>
             <h2 className="text-2xl font-bold text-ink-900">
               Schreiben Sie uns

@@ -75,7 +75,7 @@ export default function HomePage() {
         <div className="container-page grid gap-12 lg:grid-cols-[1fr_1.2fr]">
           <div>
             <div className="mb-6 w-fit rounded-xl border border-ink-200 bg-white p-4">
-              <DaeroLogoImage variant="inline" />
+              <DaeroLogoImage variant="inline" onLightBackground />
             </div>
             <span className="text-sm font-semibold uppercase tracking-wider text-brand-600">
               Über DAERO

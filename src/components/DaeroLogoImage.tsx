@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { LOGO } from "@/lib/brand";
+import { LOGO, LOGO_ON_LIGHT } from "@/lib/brand";
 
 const variantClass = {
   header: "h-9 w-auto max-w-[11rem] sm:h-10 sm:max-w-[13rem]",
@@ -14,20 +14,25 @@ export type LogoVariant = keyof typeof variantClass;
 type Props = {
   variant?: LogoVariant;
   priority?: boolean;
+  /** Use white-background asset (header, panels on white) */
+  onLightBackground?: boolean;
   className?: string;
 };
 
 export default function DaeroLogoImage({
   variant = "header",
   priority = false,
+  onLightBackground = false,
   className = "",
 }: Props) {
+  const asset = onLightBackground ? LOGO_ON_LIGHT : LOGO;
+
   return (
     <Image
-      src={LOGO.src}
-      alt={LOGO.alt}
-      width={LOGO.width}
-      height={LOGO.height}
+      src={asset.src}
+      alt={asset.alt}
+      width={asset.width}
+      height={asset.height}
       priority={priority}
       className={`object-contain object-left ${variantClass[variant]} ${className}`.trim()}
     />
@@ -39,16 +44,22 @@ export function DaeroLogoPanel({
   variant = "feature",
   className = "",
   panelClassName = "",
+  onLightBackground = true,
 }: {
   variant?: Exclude<LogoVariant, "header" | "footer" | "inline">;
   className?: string;
   panelClassName?: string;
+  onLightBackground?: boolean;
 }) {
   return (
     <div
       className={`flex items-center justify-center rounded-2xl p-8 sm:p-10 ${panelClassName}`.trim()}
     >
-      <DaeroLogoImage variant={variant} className={`mx-auto object-center ${className}`} />
+      <DaeroLogoImage
+        variant={variant}
+        onLightBackground={onLightBackground}
+        className={`mx-auto object-center ${className}`}
+      />
     </div>
   );
 }
